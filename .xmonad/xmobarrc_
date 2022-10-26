@@ -1,0 +1,65 @@
+-- xmobar configuration file 
+--
+-- Mess with this file to change the appearance of the contents of the
+-- status bar which are not directly controlled by xmonad. You can see your
+-- changes immediately by recompiling xmonad using "super-q".
+-- 
+-- There's a lot you can do here. Refer to "man xmobar". 
+-- 
+-- Author: David Brewer
+-- Repository: https://github.com/davidbrewer/xmonad-ubuntu-conf
+
+
+Config { 
+  -- Set font and default foreground/background colors. Note that
+  -- the height of xmobar is controlled by the font you use.
+  font = "xft:Ubuntu:weight=regular:pixelsize=12:antialias=true:hinting=true",
+  additionalFonts = [ "xft:Mononoki:pixelsize=12:antialias=true:hinting=true"
+                      , "xft:FontAwesome:pixelsize=12"
+                    ]
+  bgColor = "black",
+  fgColor = "grey",
+
+  alpha = 200,
+
+  allDesktops = True,
+
+  iconRoot     = ".xmonad/xpm/",
+
+  -- Position is top left, taking up 94% of screen.
+  -- You are likely to have to tweak the width here based on the width
+  -- of your screen to make it play nicely with system tray, which we
+  -- want to be taking up the remainer of the space on the right side
+  -- of your screen.
+  position = TopSize L 100 5
+
+  -- list of commands which gather information about your system for
+  -- presentation in the bar. 
+  commands = [ 
+    -- Gather and format CPU usage information. 
+    -- If it's above 50%, we consider it high usage and make it red.  
+    Run Cpu ["-t", "<fn=2>\xf108</fn> <total>%","-H","50","--high","red"] 20,
+
+    -- Gather and format memory usage information
+    Run Memory [
+      "-t","<used>mb"
+    ] 10,
+
+    -- Date formatting
+    Run Date "%a %b %_d %l:%M" "date" 10,
+    -- This line tells xmobar to read input from stdin. That's how we
+    -- get the information that xmonad is sending it for display.
+    Run UnsafeStdinReader
+   ],
+
+   -- Separator character used to wrape variables in the xmobar template 
+   sepChar = "%",
+
+   -- Alignment separater characer used in the xmobar template. Everything
+   -- before this will be aligned left, everything after aligned right.
+   alignSep = "}{",
+
+   -- Overall template for the layout of the xmobar contents. Note that
+   -- space is significant and can be used to add padding.
+   template = "<icon=haskell.xpm/>      %UnsafeStdinReader% }{  %cpu% <icon=memory.xpm/> %memory%    %date%         "
+}

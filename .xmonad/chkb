@@ -1,0 +1,10 @@
+#!/bin/zsh
+layout=$(setxkbmap -query | awk 'END{print $2}')
+case $layout in
+    us)
+            setxkbmap br
+        ;;
+    br)
+            setxkbmap us
+        ;;
+esac
