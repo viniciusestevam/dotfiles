@@ -35,22 +35,15 @@ export NVM_DIR="$HOME/.nvm"
 
 # aliases {
 alias vim="nvim"
-alias vpn="sudo openvpn --config ~/v/vpn/Pagar.me_vinicius.estevam_nexus1-prd.ovpn"
 alias vimcfg="vim ~/.config/nvim/init.lua"
 alias termcfg="vim ~/.config/alacritty/alacritty.yml"
-alias zshrc="vim ~/.zshrc && source ~/.zshrc"
+alias zshcfg="vim ~/.zshrc && source ~/.zshrc"
 alias tmuxcfg="vim ~/.tmux.conf"
 # }
 
 
-[ -f "/home/vini/.ghcup/env" ] && source "/home/vini/.ghcup/env" # ghcup-env
-
 # Variables {
 export COLORTERM=truecolor
 export EDITOR=nvim
-export GO=/usr/local/go/bin
-export ANDROID_SDK_ROOT=~/Android/Sdk
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/
-export PATH=$PATH:$GO:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/platform-tools:$JAVA_HOME
+export PATH=$PATH
 # }
-
