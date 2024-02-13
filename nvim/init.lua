@@ -1,1 +1,1 @@
-require "busco_romance.options"
+require "busco_romance"

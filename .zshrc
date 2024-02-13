@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="agnoster"
+ZSH_THEME="amuse"
 
 plugins=(git)
 
@@ -33,17 +33,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # }
 
-# aliases {
-alias vim="nvim"
-alias vimcfg="vim ~/.config/nvim/init.lua"
-alias termcfg="vim ~/.config/alacritty/alacritty.yml"
-alias zshcfg="vim ~/.zshrc && source ~/.zshrc"
-alias tmuxcfg="vim ~/.tmux.conf"
-# }
-
-
 # Variables {
 export COLORTERM=truecolor
 export EDITOR=nvim
-export PATH=$PATH
+export RC="~/dotfiles"
+
+export GO="/usr/local/go/bin"
+export PATH=$PATH:$GO
+# }
+
+# aliases {
+alias vim="nvim"
+alias vimcfg="vim $RC/nvim"
+alias termcfg="vim $RC/kitty/kitty.conf"
+alias zshcfg="vim $RC/.zshrc && source $RC/.zshrc"
+alias tmuxcfg="vim $RC/.tmux.conf"
 # }

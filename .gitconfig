@@ -1,0 +1,10 @@
+[user]
+    email = estevamvinicius31@gmail.com
+    name = Vinicius Estevam
+
+[includeIf "gitdir:~/v/w/"]
+    path = .gitconfig-work
+
+[init]
+    defaultBranch = main
+
