@@ -26,7 +26,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
--- delete to blackhole register 
+-- delete to blackhole register
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 -- disable Ex mode with Q
@@ -42,6 +42,9 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 -- navigate through location list https://freshman.tech/vim-quickfix-and-location-list/
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+-- save with ctrl s
+vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
 
 -- globally replace the word under the cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left>]])
