@@ -105,6 +105,7 @@ setup_editor() {
 setup_term() {
     echo -e "\n\n\n\n[setup] ->> terminal"
     if [ -e "$HOME/.local/kitty.app/bin/kitty"]; then
+        curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
     	sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $HOME/.local/kitty.app/bin/kitty 50
     else
        	echo "[setup] ->> alacritty is already installed"

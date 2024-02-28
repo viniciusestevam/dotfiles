@@ -36,6 +36,7 @@ export NVM_DIR="$HOME/.nvm"
 # Variables {
 export COLORTERM=truecolor
 export EDITOR=nvim
+export TERM=xterm-256color # maybe need to change this
 export RC="~/dotfiles"
 
 export GO="/usr/local/go/bin"
@@ -45,7 +46,9 @@ export PATH=$PATH:$GO
 # aliases {
 alias vim="nvim"
 alias vimcfg="vim $RC/nvim"
-alias termcfg="vim $RC/kitty/kitty.conf"
+alias termcfg="vim $RC/kitty.conf"
 alias zshcfg="vim $RC/.zshrc && source $RC/.zshrc"
 alias tmuxcfg="vim $RC/.tmux.conf"
+alias vimkeys="cat ~/dotfiles/nvim/lua/busco_romance/keymaps.lua"
 # }
+
