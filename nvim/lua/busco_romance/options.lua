@@ -38,7 +38,6 @@ local options = {
   termguicolors = true,                         -- graphical interface colors
   mouse = "a",                                  -- allow mouse interactions
   guicursor = "",                               -- always block cursor
-  autochdir = true                              -- always change to current buffer directory
 }
 
 for k, v in pairs(options) do
