@@ -1,5 +1,21 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="amuse"
+# ZSH_THEME="amuse"
+
+function git_branch_name()
+{
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  if [[ $branch == "" ]];
+  then
+    :
+  else
+    echo '('$branch')'
+  fi
+}
+
+setopt prompt_subst
+
+prompt='%B%F{135}%m%f%b%B:%b%B%~%b $(git_branch_name) > '
+RPROMPT="%W %*"
 
 plugins=(git)
 
